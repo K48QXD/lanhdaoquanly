@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập Giữa kỳ - Đỗ Văn Thạo</title>
+    
+    <!-- Phần CSS để định dạng trang web --><style>
+        /* Cài đặt chung */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Khung chứa chính */
+        .container {
+            max-width: 900px;
+            margin: 20px auto; /* Giảm margin trên cùng */
+            padding: 30px; /* Giảm padding */
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        /* Tiêu đề trường/khoa */
+        header {
+            text-align: center;
+            font-size: 0.95em;
+            color: #555;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            margin: 5px 0;
+            font-weight: 500;
+        }
+
+        /* Thông tin bài tập */
+        .assignment-info {
+            margin-bottom: 30px;
+        }
+
+        .assignment-info h2 {
+            text-align: center;
+            color: #F97316; /* ĐỔI MÀU CAM */
+            margin-bottom: 25px;
+        }
+
+        .assignment-info p {
+            font-size: 1.1em;
+            margin: 8px 0;
+        }
+
+        /* Phần đề bài */
+        .exam-question {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fdfdfd;
+            border: 1px solid #e9e9e9;
+            border-radius: 8px;
+        }
+
+        .exam-question h3 {
+            margin-top: 0;
+            color: #F97316; /* ĐỔI MÀU CAM */
+        }
+
+        .exam-question img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Thêm style cho ảnh trong bài viết */
+        .article-image {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .article-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+        }
+
+        .article-image figcaption {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Thêm style cho đoạn trích dẫn (mô thức) */
+        blockquote {
+            font-size: 1.05em;
+            font-style: italic;
+            color: #444;
+            border-left: 4px solid #F97316; /* ĐỔI MÀU CAM */
+            padding-left: 20px;
+            margin: 25px 0 25px 20px;
+            background-color: #f9f9f9;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-right: 20px;
+            border-radius: 0 8px 8px 0;
+            position: relative; /* Thêm để định vị trích dẫn */
+        }
+
+        /* Style cho số trích dẫn trong blockquote */
+        blockquote sup {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        
+        blockquote sup a,
+        article sup a {
+            text-decoration: none;
+            color: #F97316; /* ĐỔI MÀU CAM */
+            font-weight: 500;
+            font-size: 0.9em; /* Tăng kích thước số trích dẫn một chút */
+        }
+
+        blockquote sup a:hover,
+        article sup a:hover {
+            text-decoration: underline;
+        }
+
+        /* Nội dung bài làm */
+        article h1 {
+            text-align: center;
+            color: #F97316; /* ĐỔI MÀU CAM */
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+
+        article p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: justify; /* Căn đều 2 bên cho đẹp mắt */
+        }
+
+        article i {
+            color: #4a4a4a;
+            font-style: italic;
+        }
+
+        /* Tài liệu tham khảo */
+        .references {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .references h3 {
+            color: #F97316; /* ĐỔI MÀU CAM */
+            margin-bottom: 15px;
+        }
+
+        .references ol {
+            padding-left: 30px;
+        }
+
+        .references li {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .references a {
+            color: #0066cc;
+            text-decoration: none;
+            word-break: break-all; /* Ngăn link dài làm vỡ layout */
+        }
+
+        .references a:hover {
+            text-decoration: underline;
+        }
+
+        /* Chân trang */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Tương thích với di động */
+        @media (max-width: 768px) {
+            body {
+                background-color: #ffffff; /* Nền trắng trên di động */
+            }
+            .container {
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            article h1 {
+                font-size: 1.8em;
+            }
+
+            article p, .references li {
+                font-size: 1em;
+                text-align: left; /* Tắt căn đều trên di động */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Đây là khung chứa chính của trang --><div class="container">
+        
+        <!-- Phần thông tin trường học --><header>
+            <p>TRƯỜNG ĐẠI HỌC BÁCH KHOA - ĐHĐN</p>
+            <p>KHOA QUẢN LÝ DỰ ÁN</p>
+        </header>
+
+        <!-- Phần thông tin bài tập và học viên --><section class="assignment-info">
+            <h2>BÀI TẬP GIỮA KỲ</h2>
+            <p><strong>Môn:</strong> Lãnh đạo & Quản lý</p>
+            <p><strong>Học viên:</strong> Đỗ Văn Thạo</p>
+            <p><strong>Lớp:</strong> K48.QXD</p>
+        </section>
+
+        <!-- Phần hiển thị hình ảnh đề bài --><section class="exam-question">
+            <h3>Đề bài</h3>
+            <!-- LƯU Ý: Tên tệp hình ảnh này phải khớp chính xác với tệp bạn đã tải lên --><img src="z6917087102944_10fae327d891296c5f679bec66abb929.jpg" alt="Đề bài - Quá trình chuyển đổi mô thức">
+        </section>
+
+        <!-- Phần nội dung chính của bài làm --><article>
+            <h1>SỰ CHUYỂN MÌNH CỦA MỘT TÂM THỨC</h1>
+
+            <!-- ĐOẠN TRÍCH DẪN VỀ MÔ THỨC MỚI THÊM --><blockquote>
+                "Thuật ngữ mô thức có xuất xứ là từ paradigm trong tiếng Hy Lạp, vốn là một thuật ngữ khoa học nhưng ngày nay được dùng khá phổ biến với nghĩa là một nhận thức, giả thuyết, lý luận, khung tham chiếu, hay lăng kính qua đó bạn nhìn nhận thế giới. Mô thức như một tấm bản đồ lãnh thổ hay bản đồ thành phố."
+                <!-- Trích dẫn [5] --><sup><a href="#ref-5">[5]</a></sup>
+            </blockquote>
+
+            <!-- HÌNH ẢNH NHẬN THỨC (ĐÃ DI CHUYỂN LÊN ĐÂY) --><figure class="article-image">
+                <img src="good-better-best.jpg" alt="Hình ảnh về sự lựa chọn">
+                <figcaption>Lựa chọn điều phù hợp nhất với bản thân ở mỗi giai đoạn.</figcaption>
+            </figure>
+
+            <p>Đời người như một dòng sông, có những khúc quanh buộc ta phải dừng lại và lựa chọn hướng đi mới. Hành trình từ sân bóng đá tuổi trẻ đến với Pickleball ở tuổi trung niên của tôi không đơn thuần là thay đổi môn thể thao, mà là cuộc chuyển mình của cả một tâm thức. Đỉnh cao của hành trình này chính là việc tôi chính thức tham gia giải đấu FPM's Pickleball Open 2025 - nơi tôi có cơ hội trải nghiệm trọn vẹn ý nghĩa của sự thay đổi này.</p>
+            
+            <p>Theo Tuổi Trẻ <sup><a href="#ref-3">[3]</a></sup> trong bài <i>"Vì sao tuổi 40 là độ tuổi nhạy cảm của việc chơi thể thao"</i>, đây là thời điểm cơ thể có những thay đổi rõ rệt: khối cơ bắt đầu giảm 3-8% mỗi thập kỷ, mật độ xương giảm dần, và nguy cơ chấn thương tăng cao. Những con số này không còn là lý thuyết suông khi chính tôi đã trải qua những hệ lụy nghiêm trọng từ việc cố gắng duy trì bóng đá sau tuổi 40. Mỗi trận đấu giờ đây không còn là niềm vui thuần túy mà là những trận chiến với chấn thương. Thế nhưng, tại giải đấu FPM's Pickleball Open, tôi đã tìm thấy một không gian thể thao hoàn toàn khác - nơi sự cạnh tranh lành mạnh hòa quyện cùng tinh thần đồng đội và sự an toàn tuyệt đối.</p>
+            
+            <p>Báo Sức khỏe & Đời sống <sup><a href="#ref-2">[2]</a></sup> trong bài <i>"4 cách lựa chọn bài tập thể dục phù hợp cho người trên 40 tuổi"</i> đã đưa ra những tiêu chí khoa học giúp tôi hiểu rõ hơn về sự lựa chọn của mình. Và giải đấu chính là minh chứng rõ nhất cho thấy Pickleball hoàn toàn đáp ứng được tất cả những tiêu chí này. Tôi vẫn còn nhớ rõ không khí hào hứng của ngày 13/9/2025 tại sân Smile, Euro Hòa Xuân. Từ sáng sớm, các sân đấu đã rộn ràng tiếng cười nói, tiếng bóng đập vợt hòa cùng những lời cổ vũ nhiệt tình. Trên tay tôi là chiếc vợt Pickleball và trong lòng là sự phấn khích khó tả.</p>
+            
+            <p>Điều đặc biệt ý nghĩa là giải đấu này diễn ra ngay tại Đà Nẵng - thành phố mà trước đó không lâu, tỷ phú Bill Gates cũng đã chọn để chơi môn thể thao này. Theo mô tả từ báo Người Lao Động <sup><a href="#ref-4">[4]</a></sup>, Bill Gates đã chơi Pickleball cùng bạn gái Paula Hurd tại khách sạn Five Danang Beach Resort. Hình ảnh vị tỷ phú công nghệ vui vẻ trên sân Pickleball không chỉ cho thấy sự lan tỏa toàn cầu của môn thể thao này, mà còn chứng minh rằng đây là sự lựa
+                chọn thông minh cho những người thành công, bận rộn muốn duy trì sức khỏe ở độ tuổi trung niên.</p>
+            
+            <!-- HÌNH ẢNH BILL GATES --><figure class="article-image">
+                <img src="BILLGATE IN SONTRA.jpg" alt="Bill Gates chơi Pickleball tại Đà Nẵng (Ảnh: Báo Người Lao Động)">
+                <figcaption>Hình ảnh Bill Gates chơi Pickleball tại Đà Nẵng (Nguồn ảnh: Báo Người Lao Động).</figcaption>
+            </figure>
+            
+            <!-- HÌNH ẢNH GIẢI FPM's Pickleball Open --><figure class="article-image">
+                <img src="FPM.jpg" alt="Giải FPM's Pickleball Open 2025">
+                <figcaption>Hình ảnh Giải FPM's Pickleball Open 2025.</figcaption>
+            </figure>
+
+            <p>Tại giải đấu FPM's Pickleball Open, tôi có cơ hội gặp gỡ và giao lưu với rất nhiều đồng nghiệp, thầy cô từ các khoa, ban khác nhau. Những trận đấu không chỉ đơn thuần là thi đấu mà còn là cơ hội để chúng tôi xây dựng tinh thần đồng đội, sự gắn kết. Buổi Gala tối hôm đó càng làm sâu sắc thêm những kết nối này. Dưới ánh đèn lung linh, những gương mặt đỏ ửng vì mệt mà vui, những câu chuyện về các tình huống trên sân đấu được kể lại với tất cả sự hào hứng.</p>
+            
+            <p>Lao Động <sup><a href="#ref-1">[1]</a></sup> trong bài <i>"Thể thao với sức khỏe thể chất và tinh thần"</i> đã khẳng định thể thao là "liều thuốc quý" cho sức khỏe tinh thần. Điều này càng được chứng minh qua trải nghiệm của chính tôi tại giải đấu. Sau một năm kiên trì tập luyện, tôi không chỉ cải thiện về thể chất (giảm 2kg, cơ thể dẻo dai), mà quan trọng hơn là sự thay đổi về tinh thần. Tôi cảm nhận rõ mình đang đi đúng hướng - cùng với Bill Gates và nhiều người đang sinh sống tại thành phố Đà Nẵng trong việc lựa chọn một môn thể thao khoa học, phù hợp cho sức khỏe lâu dài.</p>
+            
+            <!-- HÌNH ẢNH PICKLEBALL HẠNH PHÚC MỚI THÊM --><figure class="article-image">
+                <img src="PIKLEBALL HANH PHUC.jpg" alt="Pickleball là hạnh phúc">
+                <figcaption>Tìm thấy niềm vui và sức khỏe với lựa chọn mới.</figcaption>
+            </figure>
+
+            <p>Nhìn lại hành trình từ những ngày đầu bỡ ngỡ với cây vợt Pickleball đến khi tự tin thi đấu tại giải FPM's Pickleball Open 2025, tôi nhận ra rằng đây không chỉ là sự thay đổi môn thể thao, mà là cả một quá trình chuyển đổi tư duy về sức khỏe, về cách tận hưởng cuộc sống và xây dựng những mối quan hệ ý nghĩa. Sự kiện Bill Gates chơi Pickleball tại chính Đà Nẵng và việc tôi được tham gia giải đấu chuyên nghiệp như một lời khẳng định rằng tôi đã có sự lựa chọn đúng đắn. Ở tuổi 40, tôi không chỉ tìm thấy môn thể thao phù hợp, mà còn khám phá ra một triết lý sống mới: thông minh không nằm ở việc cố gắng duy trì mãi những thói quen cũ, mà ở khả năng chọn lựa những gì phù hợp nhất cho bản thân ở mỗi giai đoạn cuộc đời.</p>
+        </article>
+
+        <!-- Phần tài liệu tham khảo --><section class="references">
+            <h3>Tài liệu tham khảo</h3>
+            <ol>
+                <!-- Thêm 'id' để tạo liên kết neo --><li id="ref-1"><a href="https://laodong.vn/the-thao/the-thao-voi-suc-khoe-the-chat-va-tinh-than-1318981.ldo" target="_blank">https://laodong.vn/the-thao/the-thao-voi-suc-khoe-the-chat-va-tinh-than-1318981.ldo</a></li>
+                <li id="ref-2"><a href="https://suckhoedoisong.vn/4-cach-lua-chon-bai-tap-the-duc-phu-hop-cho-nguoi-tren-40-tuoi-169221125105549617.htm" target="_blank">httpsD://suckhoedoisong.vn/4-cach-lua-chon-bai-tap-the-duc-phu-hop-cho-nguoi-tren-40-tuoi-169221125105549617.htm</a></li>
+                <li id="ref-3"><a href="https://tuoitre.vn/vi-sao-tuoi-40-la-do-tuoi-nhay-cam-cua-viec-choi-the-thao-20231231223223846.htm" target="_blank">https://tuoitre.vn/vi-sao-tuoi-40-la-do-tuoi-nhay-cam-cua-viec-choi-the-thao-20231231223223846.htm</a></li>
+                <li id="ref-4"><a href="https://nld.com.vn/chum-anh-ti-phu-bill-gates-cung-ban-gai-choi-tennis-va-pickleball-o-da-nang-196240307135740003.htm" target="_blank">https://nld.com.vn/chum-anh-ti-phu-bill-gates-cung-ban-gai-choi-tennis-va-pickleball-o-da-nang-196240307135740003.htm</a></li>
+                <li id="ref-5"><a href="https://tuoitre.vn/suc-manh-cua-mo-thuc-329073.htm" target="_blank">https://tuoitre.vn/suc-manh-cua-mo-thuc-329073.htm</a></li>
+            </ol>
+        </section>
+
+        <!-- Chân trang --><footer>
+            <p>&copy; 2025 Đỗ Văn Thạo - Lớp K48.QXD</p>
+        </footer>
+        
+    </div> <!-- Kết thúc .container --></body>
+</html>
+
